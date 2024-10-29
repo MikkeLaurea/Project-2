@@ -6,6 +6,10 @@ export async function handler(event, context) {
     const data = await response.text();
     return {
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*', 
+        'Content-Type': 'application/xml',
+      },
       body: data,
     };
   } catch (error) {
